@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3929ed02-df61-4b6a-b365-25d2d70e0e83" name="Changes" comment="" />
+    <list default="true" id="3929ed02-df61-4b6a-b365-25d2d70e0e83" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/javapractice/DBDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javapractice/DBDemo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +24,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="21C9NpyoMbH2W8sljNhVTbBpWtn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
