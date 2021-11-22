@@ -9,7 +9,7 @@ public class DBDemo {
         String jdbcURL = "jdbc:mysql://localhost:3306/payroll_service";
         String userName = "root";
         String password = "Admin@123";
-        Connection connection;
+        Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver loaded");
@@ -25,6 +25,12 @@ public class DBDemo {
             System.out.println("Connection is successfull !!!!!!!!"+connection);
         }
         catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
+            connection.close();
+        }
+        catch(Exception e){
             e.printStackTrace();
         }
     }
