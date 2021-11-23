@@ -1,8 +1,11 @@
 package employeepayroll;
 
 import javapractice.EmployeePayRollData;
+import javapractice.EmployeePayrollDBService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 import java.util.List;
 import javapractice.EmployeePayrollService;
 public class EmployeePayrollServiceTest {
@@ -20,6 +23,16 @@ public class EmployeePayrollServiceTest {
         employeePayRollService.updateEmployeeSalary("Terisa",3000000.00);
         boolean result = employeePayRollService.checkEmployeePayrollInSyncWithDB("Terisa");
         Assertions.assertTrue(result);
+    }
+    @Test
+    public void givenDateRange_WhenRetrieved_ShouldMatchEmployeeCount(){
+        EmployeePayrollService employeePayRollService = new EmployeePayrollService();
+        EmployeePayrollDBService employeePayRollDBService= new EmployeePayrollDBService() ;
+        employeePayRollService.readEmployeePayRoll();
+        LocalDate startDate = LocalDate.of(2019,01,01);
+        LocalDate endDate = LocalDate.now();
+        List<EmployeePayRollData> employeePayRollDBData = employeePayRollDBService.readEmployeePayRollForDateRange(startDate, endDate);
+        Assertions.assertEquals(2, employeePayRollDBData.size());
     }
 }
 
