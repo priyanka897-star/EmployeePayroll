@@ -8,7 +8,7 @@ public class EmployeePayrollDBService  {
   public  List<EmployeePayRollData> readData() {
     List<EmployeePayRollData> employeePayrollList = new ArrayList<>();
         try{
-       String sql = "SELECT * FROM employee_payroll;";
+            String sql = "SELECT * FROM employee_payroll;";
             Connection connection = this.getConnection();
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery(sql);
