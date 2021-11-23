@@ -1,5 +1,7 @@
 package javapractice;
+
 import java.util.List;
+import java.util.Map;
 
 public class EmployeePayrollService {
 
@@ -38,5 +40,13 @@ public class EmployeePayrollService {
     public boolean checkEmployeePayrollInSyncWithDB(String name) {
         List<EmployeePayRollData> employeePayrollDataList = employeePayrollDBService.getEmployeePayrollData(name);
         return employeePayrollDataList.get(0).equals(getEmployeePayRollData(name));
+    }
+
+    public Map<String, Double> readAverageSalaryByGender() {
+        return employeePayrollDBService.getAverageSalaryByGender();
+    }
+
+    public Map<String, Integer> readCountSalaryByGender() {
+        return employeePayrollDBService.getCountByGender();
     }
 }

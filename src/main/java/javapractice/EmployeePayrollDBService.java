@@ -3,7 +3,9 @@ package javapractice;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeePayrollDBService {
     private PreparedStatement employeePayrollDataStatement;
@@ -11,6 +13,7 @@ public class EmployeePayrollDBService {
 
     public EmployeePayrollDBService() {
     }
+
     public static EmployeePayrollDBService getInstance() {
         if (employeePayrollDBService == null)
             employeePayrollDBService = new EmployeePayrollDBService();
@@ -84,13 +87,14 @@ public class EmployeePayrollDBService {
         String sql = String.format("SELECT * from employee_payroll WHERE START BETWEEN '%s' AND '%s';", Date.valueOf(startDate), Date.valueOf(endDate));
         return this.getEmployeePayrollDataUsingDB(sql);
     }
+
     private List<EmployeePayRollData> getEmployeePayrollDataUsingDB(String sql) {
         List<EmployeePayRollData> payRollDataList = new ArrayList<>();
-        try(Connection connection = this.getConnection()) {
+        try (Connection connection = this.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             payRollDataList = this.getEmployeePayrollData(resultSet);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return payRollDataList;
@@ -120,8 +124,43 @@ public class EmployeePayrollDBService {
             e.printStackTrace();
         }
     }
+
     public List<EmployeePayRollData> readEmployeePayRollForDateRange(LocalDate startDate, LocalDate endDate) {
         return employeePayrollDBService.getEmployeeForDateRange(startDate, endDate);
+    }
+
+    public Map<String, Double> getAverageSalaryByGender() {
+        String sql = "select gender, AVG(salary) as avg_salary FROM employee_payroll GROUP BY gender";
+        Map<String, Double> genderToAverageSalaryMap = new HashMap<>();
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                String gender = resultSet.getString("gender");
+                double salary = resultSet.getDouble("avg_salary");
+                genderToAverageSalaryMap.put(gender, salary);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return genderToAverageSalaryMap;
+    }
+
+    public Map<String, Integer> getCountByGender() {
+        String sql = "select gender, count(gender) as count from employee_payroll GROUP BY gender";
+        Map<String, Integer> genderToAverageSalaryMap = new HashMap<>();
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                String gender = resultSet.getString("gender");
+                int count = resultSet.getInt("count");
+                genderToAverageSalaryMap.put(gender, count);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return genderToAverageSalaryMap;
     }
 
     public Connection getConnection() {

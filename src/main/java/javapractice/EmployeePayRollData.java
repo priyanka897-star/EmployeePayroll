@@ -1,4 +1,5 @@
 package javapractice;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -8,13 +9,14 @@ public class EmployeePayRollData {
     public double salary;
     public LocalDate startDate;
 
-    public EmployeePayRollData(Integer id,String name,Double salary){
+    public EmployeePayRollData(Integer id, String name, Double salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
     }
-    public EmployeePayRollData(int id,String name,double salary,LocalDate startDate){
-        this(id,name,salary);
+
+    public EmployeePayRollData(int id, String name, double salary, LocalDate startDate) {
+        this(id, name, salary);
         this.startDate = startDate;
     }
 

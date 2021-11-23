@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3929ed02-df61-4b6a-b365-25d2d70e0e83" name="Changes" comment="" />
+    <list default="true" id="3929ed02-df61-4b6a-b365-25d2d70e0e83" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/javapractice/EmployeePayrollDBService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/javapractice/EmployeePayrollDBService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/javapractice/EmployeePayrollService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/javapractice/EmployeePayrollService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/employeepayroll/EmployeePayrollServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/employeepayroll/EmployeePayrollServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayRollData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayRollData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayrollDBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayrollDBService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayrollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javapractice/EmployeePayrollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/employeepayroll/EmployeePayrollServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/employeepayroll/EmployeePayrollServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +84,7 @@
       <recent name="employeepayroll" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeePayrollServiceTest.givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDB">
+  <component name="RunManager" selected="JUnit.EmployeePayrollServiceTest">
     <configuration name="DBDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javapractice.DBDemo" />
       <module name="myproject.main" />
@@ -156,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EmployeePayrollServiceTest.givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDB" />
         <item itemvalue="JUnit.EmployeePayrollServiceTest" />
+        <item itemvalue="JUnit.EmployeePayrollServiceTest.givenNewSalaryForEmployee_WhenUpdated_ShouldSyncWithDB" />
         <item itemvalue="JUnit.All in myproject" />
         <item itemvalue="Application.EmployeePayrollDBService" />
         <item itemvalue="Application.DBDemo" />
