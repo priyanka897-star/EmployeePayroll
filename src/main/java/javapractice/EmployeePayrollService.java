@@ -1,5 +1,6 @@
 package javapractice;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -48,5 +49,9 @@ public class EmployeePayrollService {
 
     public Map<String, Integer> readCountSalaryByGender() {
         return employeePayrollDBService.getCountByGender();
+    }
+
+    public void addEmployeePayroll(String name, double salary, LocalDate start, String gender) {
+        employeePayRollList.add(employeePayrollDBService.addEmployeeToPayroll(name, salary, start, gender));
     }
 }

@@ -37,7 +37,7 @@ public class EmployeePayrollServiceTest {
         LocalDate startDate = LocalDate.of(2019, 01, 01);
         LocalDate endDate = LocalDate.now();
         List<EmployeePayRollData> employeePayRollDBData = employeePayRollDBService.readEmployeePayRollForDateRange(startDate, endDate);
-        Assertions.assertEquals(4, employeePayRollDBData.size());
+        Assertions.assertEquals(5, employeePayRollDBData.size());
     }
 
     @Test
@@ -46,7 +46,7 @@ public class EmployeePayrollServiceTest {
         EmployeePayrollDBService employeePayRollDBService = new EmployeePayrollDBService();
         employeePayRollService.readEmployeePayRoll();
         Map<String, Double> averageSalaryByGender = employeePayRollService.readAverageSalaryByGender();
-        Assertions.assertTrue(averageSalaryByGender.get("M").equals(4000000.00) && averageSalaryByGender.get("F").equals(1700000.00));
+        Assertions.assertTrue(averageSalaryByGender.get("M").equals(5000000.00) && averageSalaryByGender.get("F").equals(1700000.00));
     }
 
     @Test
@@ -55,6 +55,14 @@ public class EmployeePayrollServiceTest {
         employeePayRollService.readEmployeePayRoll();
         Map<String, Integer> countByGender = employeePayRollService.readCountSalaryByGender();
         Assertions.assertTrue(countByGender.get("M").equals(1) && countByGender.get("F").equals(3));
+    }
+    @Test
+    public void givenNewEmployee_WhenAdded_ShouldSyncWithDB(){
+        EmployeePayrollService employeePayRollService = new EmployeePayrollService();
+        employeePayRollService.readEmployeePayRoll();
+        employeePayRollService.addEmployeePayroll("Mark", 6000000.00, LocalDate.now(), "M");
+        boolean result = employeePayRollService.checkEmployeePayrollInSyncWithDB("Mark");
+        Assertions.assertTrue(result);
     }
 }
 
